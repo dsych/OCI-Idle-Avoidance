@@ -1,0 +1,13 @@
+[Unit]
+Description=OCI Idle Avoidance Load Controller
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/cpu_load_generator/OCI-Idle-Avoidance
+ExecStart=/bin/bash /etc/cpu_load_generator/OCI-Idle-Avoidance/scripts/load_controller.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
